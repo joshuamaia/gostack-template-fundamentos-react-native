@@ -41,14 +41,14 @@ const CartProvider: React.FC = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    async function updateStoredProducts(): Promise<void> {
+    async function updateProducts(): Promise<void> {
       await AsyncStorage.setItem(
         '@GoMarketplace:products',
         JSON.stringify(products),
       );
     }
 
-    updateStoredProducts();
+    updateProducts();
   }, [products]);
 
   const addToCart = useCallback(
